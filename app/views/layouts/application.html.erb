@@ -7,13 +7,18 @@
   </head>
   <body>
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <div class="notice">
+        <p><%= notice %></p>
+      </div>
     <% end %>
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <div class="alert">
+        <p><%= alert %></p>
+      </div>
     <% end %>
 
-    <%= yield %>
-
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

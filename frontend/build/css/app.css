@@ -328,9 +328,10 @@ html {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  -webkit-font-smoothing: antialiased; }
 
-body {
+body, .container {
   height: 100%;
   width: 100%; }
 
@@ -341,3 +342,73 @@ a {
   color: #699ec0; }
   a:hover {
     color: #444d65; }
+
+input {
+  padding: 0.5em;
+  border-radius: 0.25em;
+  width: 100%;
+  margin-bottom: 0.5em;
+  border: 1px solid #e1e1e1; }
+
+.auth-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 350px;
+  border: 1px solid #e1e1e1;
+  padding: 0 1em 1em 1em;
+  border-radius: 0.25em;
+  background: #FFFFFF; }
+  .auth-container label {
+    display: block;
+    margin-bottom: 0.25em; }
+  .auth-container .checkbox label, .auth-container .checkbox input {
+    display: inline;
+    width: auto; }
+  .auth-container .checkbox label {
+    top: 1px;
+    position: relative; }
+  .auth-container .auth-button {
+    margin-top: 0.25em;
+    background: #444d65;
+    color: #FFFFFF; }
+    .auth-container .auth-button:hover {
+      background: #4e5974; }
+    .auth-container .auth-button:active {
+      background: #596583; }
+  .auth-container #error_explanation h2 {
+    font-size: 16px;
+    color: #c6463d; }
+  .auth-container #error_explanation ul {
+    list-style-type: none;
+    padding-left: 0.5em; }
+    .auth-container #error_explanation ul li {
+      color: #c6463d;
+      margin-bottom: 0.25em; }
+  .auth-container .field_with_errors input {
+    border: 1px solid #c6463d; }
+  .auth-container .field_with_errors label {
+    color: #c6463d; }
+  .auth-container .field_with_errors br {
+    display: none; }
+
+.alert, .notice {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+  .alert p, .notice p {
+    text-align: center;
+    color: #FFFFFF; }
+
+.alert {
+  background: #c6463d; }
+
+.notice {
+  background: #699ec0; }
