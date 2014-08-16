@@ -57,9 +57,9 @@ gulp.task('rev', ['sass', 'scripts'], function() {
 });
 
 gulp.task('min', function(){
-  gulp.src(['build/**/*.js'])
+  gulp.src(['build/js/*.js'])
     .pipe(uglify())
-    .pipe(gulp.dest('build/min'));
+    .pipe(gulp.dest('build/min/'));
 });
 
 gulp.task('watch', ['sass', 'scripts', 'lib'], function() {
