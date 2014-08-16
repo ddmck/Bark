@@ -7,9 +7,19 @@ var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var autoprefixer = require('gulp-autoprefixer');
 var stdlib = require('./stdlib');
+var plumber = require('gulp-plumber');
+var gutil = require('gulp-util');
+
+var onError = function (err) {
+  gutil.beep();
+  console.log(err);
+};
 
 gulp.task('sass', function() {
-  return gulp.src('src/scss/app.scss')
+  gulp.src('src/scss/app.scss')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(sass())
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
     .pipe(gulp.dest('./build/css'))
@@ -19,6 +29,9 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
     // Single entry point to browserify
     gulp.src('src/js/app.js')
+      .pipe(plumber({
+        errorHandler: onError
+      }))
       .pipe(browserify({
         insertGlobals : true,
         debug : !gulp.env.production
@@ -31,7 +44,6 @@ gulp.task('scripts', function() {
 gulp.task('lib', function(){
   return gulp.src(stdlib.files)
     .pipe(concat('lib.js'))
-    // .pipe(stripDebug())
     .pipe(uglify())
     .pipe(gulp.dest('./build/js/'));
 });

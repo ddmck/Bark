@@ -9,6 +9,8 @@
     "gulp-connect": "~2.0.6",
     "gulp-autoprefixer": "0.0.8",
     "eco": "~1.1.0-rc-3",
-    "gulp-concat": "~2.3.4"
+    "gulp-concat": "~2.3.4",
+    "gulp-plumber": "~0.6.4",
+    "gulp-util": "~3.0.0"
   }
 }
