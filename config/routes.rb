@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :todos
+
   devise_for :users
   get 'static_pages/home'
 
