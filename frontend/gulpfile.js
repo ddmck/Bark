@@ -36,7 +36,7 @@ gulp.task('scripts', function() {
         insertGlobals : true,
         debug : !gulp.env.production
       }))
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(gulp.dest('./build/js'))
       .pipe(connect.reload());
 });
@@ -44,22 +44,29 @@ gulp.task('scripts', function() {
 gulp.task('lib', function(){
   return gulp.src(stdlib.files)
     .pipe(concat('lib.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('./build/js/'));
 });
 
 gulp.task('rev', ['sass', 'scripts'], function() {
-  return gulp.src(['build/**/*.css', 'build/**/*.js'])
+  return gulp.src(['build/**/*.css', 'build/min/**/*.js'])
     .pipe(rev())
     .pipe(gulp.dest('dist'))
     .pipe(rev.manifest())
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('min', function(){
+  gulp.src(['build/**/*.js'])
+    .pipe(uglify())
+    .pipe(gulp.dest('build/min'));
+});
+
 gulp.task('watch', ['sass', 'scripts', 'lib'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['scripts']);
+  gulp.watch('src/js/**/*.js', ['scripts', 'min']);
   gulp.watch('./stdlib.js', ['lib']);
+  // gulp.watch()
 });
 
 gulp.task('connect', function() {
