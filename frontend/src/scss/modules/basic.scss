@@ -15,8 +15,8 @@ body, .container {
   width: 100%;
 }
 
-p, h1, h2, h3, h4, h5, h6, li {
-  color: $dark-grey;
+p, h1, h2, h3, h4, h5, h6, li, label, input {
+  color: $default-text;
 }
 
 a {

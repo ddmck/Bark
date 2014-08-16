@@ -335,8 +335,8 @@ body, .container {
   height: 100%;
   width: 100%; }
 
-p, h1, h2, h3, h4, h5, h6, li {
-  color: #383838; }
+p, h1, h2, h3, h4, h5, h6, li, label, input {
+  color: #505260; }
 
 a {
   color: #699ec0; }
