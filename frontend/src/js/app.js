@@ -5,10 +5,9 @@ var App = new Router();
 
 $(document).ready(function(){
   App.start();
-  var todoListItem = new TodoListItem({});
+  var todoListItem = new TodoListItem({id: 1});
+  todoListItem.fetch();
   var todoListItemView = new TodoListItemView({model: todoListItem});
   todoListItemView.render();
   $('#app').html(todoListItemView.el);
-  console.log(todoListItemView);
-  console.log(todoListItem.get('description'));
 });
