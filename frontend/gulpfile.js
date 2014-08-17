@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserify = require('gulp-browserify');
+var browserifyHandlebars = require('browserify-handlebars');
 var uglify = require('gulp-uglify');
 var rev = require('gulp-rev');
 var concat = require('gulp-concat');
@@ -33,6 +34,7 @@ gulp.task('scripts', function() {
         errorHandler: onError
       }))
       .pipe(browserify({
+        transform: [browserifyHandlebars],
         insertGlobals : true,
         debug : !gulp.env.production
       }))
@@ -64,7 +66,7 @@ gulp.task('min', function(){
 
 gulp.task('watch', ['sass', 'scripts', 'lib'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['scripts']);
+  gulp.watch('src/js/**/*.*', ['scripts']);
   gulp.watch('./stdlib.js', ['lib']);
   // gulp.watch()
 });
