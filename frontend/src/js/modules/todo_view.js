@@ -1,7 +1,11 @@
+var template = require('./todo_item.handlebars')
 module.exports = Backbone.View.extend({
   tagName: 'li',
-  template: _.template("<div class='todo-item'><input type='checkbox'><p><%= description %></p></div>"),
-
+  template: template,
+  events: {
+    'click p': 'sayHi',
+    'change input': 'toggleCompleted'
+  },
   render: function(){
     // var html = '<p>' + this.model.get('description') + '</p>';
     this.$el.html(this.template(this.model.toJSON()));
@@ -11,5 +15,12 @@ module.exports = Backbone.View.extend({
     console.log(this.el);
     this.model.on('change', this.render, this);
     this.model.on('fetch', this.render, this);
+  },
+  sayHi: function(){
+    alert("Hi");
+  },
+  toggleCompleted: function(){
+    this.model.toggleCompleted();
   } 
+
 })
