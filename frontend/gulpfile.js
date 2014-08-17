@@ -64,7 +64,7 @@ gulp.task('min', function(){
 
 gulp.task('watch', ['sass', 'scripts', 'lib'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['scripts', 'min']);
+  gulp.watch('src/js/**/*.js', ['scripts']);
   gulp.watch('./stdlib.js', ['lib']);
   // gulp.watch()
 });
