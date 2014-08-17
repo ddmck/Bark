@@ -1,4 +1,4 @@
-var TodoView = require('./todo_view.js')
+var TodoView = require('./todo_view.js');
 
 module.exports = Backbone.View.extend({
   tagName: 'ul',

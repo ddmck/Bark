@@ -12,7 +12,6 @@ module.exports = Backbone.View.extend({
     return this;
   },
   initialize: function(){
-    console.log(this.el);
     this.model.on('change', this.render, this);
     this.model.on('fetch', this.render, this);
   },

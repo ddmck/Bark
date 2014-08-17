@@ -428,11 +428,20 @@ input {
   border-radius: 0.25em;
   background: #FFFFFF; }
 
+.add-todo form input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-style: italic; }
+.add-todo form input::-webkit-input-placeholder {
+  /* Firefox 19+ */
+  font-style: italic; }
+
 ul.todo-list {
-  list-style-type: none; }
+  list-style-type: none;
+  padding: 0; }
   ul.todo-list li {
     height: 40px;
-    line-height: 40px; }
+    line-height: 40px;
+    font-size: 1.2em; }
 
 .todo-item input, .todo-item p {
   display: inline;

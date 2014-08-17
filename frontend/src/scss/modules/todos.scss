@@ -11,12 +11,25 @@
   background: $white;
 }
 
+.add-todo {
+  form input {
+    &::-moz-placeholder {  /* Firefox 19+ */
+       font-style: italic;  
+    }
+    &::-webkit-input-placeholder {  /* Firefox 19+ */
+       font-style: italic;  
+    }
+  }
+}
+
+
 ul.todo-list {
   list-style-type: none;
-
+  padding: 0;
   li {
     height: 40px;
     line-height: 40px;
+    font-size: 1.2em;
   }
 }
 
