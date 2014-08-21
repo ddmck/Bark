@@ -423,7 +423,7 @@ input {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 600px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #e36767;
   padding: 1em;
   border-radius: 0.25em;
   background: #FFFFFF; }
@@ -443,10 +443,25 @@ ul.todo-list {
     line-height: 40px;
     font-size: 1.2em; }
 
-.todo-item input, .todo-item p {
-  display: inline;
-  width: auto; }
-.todo-item p {
-  position: relative;
-  top: 1px;
-  margin-left: 1em; }
+.todo-item {
+  position: relative; }
+  .todo-item input, .todo-item p {
+    display: inline;
+    width: auto; }
+  .todo-item p {
+    position: relative;
+    top: 2px; }
+    .todo-item p.description {
+      margin-left: 1em; }
+    .todo-item p.delete {
+      margin: 0;
+      position: absolute;
+      left: 100%;
+      -webkit-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+              transform: translateX(-100%);
+      color: #e1e1e1;
+      font-weight: bold;
+      cursor: pointer; }
+      .todo-item p.delete:hover {
+        color: #c6463d; }

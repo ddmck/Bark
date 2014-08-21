@@ -7,6 +7,7 @@ module.exports = Backbone.Model.extend({
   toggleCompleted: function(){
     if( this.get('completed') == false ){
       this.set('completed', true);
+      this.trigger('displayImage');
     } else {
       this.set('completed', false);
     }
