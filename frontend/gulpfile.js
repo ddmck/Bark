@@ -46,7 +46,6 @@ gulp.task('scripts', function() {
 gulp.task('lib', function(){
   return gulp.src(stdlib.files)
     .pipe(concat('lib.js'))
-    // .pipe(uglify())
     .pipe(gulp.dest('./build/js/'));
 });
 
@@ -74,7 +73,10 @@ gulp.task('watch', ['sass', 'scripts', 'lib'], function() {
 gulp.task('connect', function() {
   connect.server({
     root: 'build',
-    livereload: true,
+    livereload: {
+      enabled: true,
+      port: 35727
+    },
     port: 8000
   });
 });
