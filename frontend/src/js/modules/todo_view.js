@@ -24,7 +24,8 @@ module.exports = Backbone.View.extend({
     this.model.toggleCompleted();
   }, 
   displayImage: function(){
-    $('#app').prepend('<img src="https://scontent-a.cdninstagram.com/hphotos-xpa1/t51.2885-15/925046_1447103408877220_699749604_n.jpg" width="100%">');
+    $('#reward-img').remove();
+    $('#app').prepend('<img id="reward-img" src="http://scontent-a.cdninstagram.com/hphotos-xpa1/t51.2885-15/10424414_630577340360006_211428716_n.jpg" width="100%">');
   } 
 
 })
