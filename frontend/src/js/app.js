@@ -1,4 +1,4 @@
-var Router = require('./modules/router');
+var Router = require('./modules/router/router');
 
 $(document).ready(function(){
   var tokenValue = $("meta[name='csrf-token']").attr('content');

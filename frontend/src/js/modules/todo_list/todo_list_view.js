@@ -5,6 +5,7 @@ module.exports = Backbone.View.extend({
   className: 'todo-list',
   initialize: function(){
     this.collection.on('add', this.addOne, this);
+    this.collection.on('displayImage', this.displayImage, this);
   },
   render: function(){
     this.collection.forEach(this.addOne, this)

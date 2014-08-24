@@ -1,4 +1,4 @@
-var TodoItem = require('./todo_item');
+var TodoItem = require('../todo_list/todo_item');
 
 module.exports = Backbone.View.extend({
   tagName: 'div',
@@ -24,6 +24,7 @@ module.exports = Backbone.View.extend({
     this.render();
   },
   render: function(){
+    console.log("Rendering ")
     this.$el.html(this.template());
     return this;
   },

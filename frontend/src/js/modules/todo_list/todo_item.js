@@ -1,3 +1,6 @@
+var vent = require('../vent/vent')
+
+
 module.exports = Backbone.Model.extend({
   urlRoot: "/todos",
   defaults: {
@@ -7,7 +10,7 @@ module.exports = Backbone.Model.extend({
   toggleCompleted: function(){
     if( this.get('completed') == false ){
       this.set('completed', true);
-      this.trigger('displayImage');
+      vent.trigger('displayImage');
     } else {
       this.set('completed', false);
     }
