@@ -1,5 +1,4 @@
-var vent = require('../vent/vent')
-
+var vent = require('../vent/vent');
 
 module.exports = Backbone.Model.extend({
   urlRoot: "/todos",
