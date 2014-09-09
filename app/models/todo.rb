@@ -11,6 +11,6 @@ class Todo < ActiveRecord::Base
   end
 
   def send_webhook
-    HTTParty.get('http://localhost:2020/update_todos')
+    HTTParty.get("http://localhost:2020/update_todos?userid=#{self.user_id}")
   end
 end
